@@ -1,5 +1,5 @@
 #nav-wrapper{
-  background-color: #f5f5f5;
+  background-color: #fafafa;
 }
 
 #pageOne, #pageTwo, #pageThree, #pageFour, #pageFive, #pageSix{
@@ -10,6 +10,15 @@
   font-family: 'Julius Sans One', sans-serif;
   color : black;
   font-size: 55px;
+}
+
+.palette{
+  border: 2px solid black;
+}
+.flexBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
