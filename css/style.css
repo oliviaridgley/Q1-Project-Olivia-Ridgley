@@ -2,8 +2,14 @@
   background-color: #f5f5f5;
 }
 
-#pageOne, #pageTwo, #pageThree, #pageFour, #pageFive {
+#pageOne, #pageTwo, #pageThree, #pageFour, #pageFive, #pageSix{
   font-size: 1rem;
+}
+
+#logo-text{
+  font-family: 'Julius Sans One', sans-serif;
+  color : black;
+  font-size: 55px;
 }
 
 body {
