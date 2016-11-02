@@ -12,6 +12,8 @@
   font-size: 55px;
 }
 
+
+
 .palette{
   border: 2px solid black;
 }
@@ -30,6 +32,7 @@ body {
  main {
    flex: 1 0 auto;
  }
+
 
  html {
    font-family: 'Quicksand', sans-serif;
