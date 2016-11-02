@@ -15,11 +15,9 @@ app.use('/', function(req, res) {
   req.pipe(request(url)).pipe(res);
 });
 
-/*
 app.use('/api/palettes', function(req, res) {
   var url = apiServerHost + '/api/palettes' + req.url;
   req.pipe(request(url)).pipe(res);
 });
-*/
 
 app.listen(process.env.PORT || 3000);
