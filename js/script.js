@@ -1,4 +1,7 @@
 "use strict";
+
+var palettes = [];
+
 $(document).ready(function() {
     //console.log("ready!");
     $(".dropdown-button").dropdown();
@@ -8,8 +11,7 @@ $(document).ready(function() {
     $('select').material_select();
 
 
-
-//=================== Checking Word Submitted and Storing =============//
+//=========== Checking Word Submitted and Storing ===========//
 
     $('#wordsSubmit').on('click', function() {
         if ($('#simple').is(':checked')) {
@@ -40,7 +42,7 @@ $(document).ready(function() {
   });
 
 
-//============ Placing Typeface Choices from Word Selection  +  Store ======//
+//======= Placing Typeface Choices from Word Selection  +  Store ======//
 
 var localStorageWordOne = localStorage.userWord;
 //console.log(localStorageWordOne);
@@ -154,7 +156,7 @@ $('#typeSubmit').on('click', function(){
   window.location='../html/palette.html';
 });
 
-//=========================== Api Call to ColourLovers ================//
+//================ Api Call to ColourLovers ==============//
 
 function pickColorButton(){
   var tempHex = ($('#colorPicker').val());
@@ -166,7 +168,7 @@ console.log(userHex);
 $.getJSON(url).done(function(data) {
   console.log(data);
           var colorData = data;
-
+          palettes = data;
 
           for (var prop in colorData) {
             console.log(data[prop].colors);
@@ -187,23 +189,53 @@ $.getJSON(url).done(function(data) {
 
 $("#colorButton").on('click',pickColorButton);
 
-//=================Color palette Storage + Next Page ============//
-$('#paletteSubmit').on('click', function() {
-    if ($('#paletteChoiceOne').is('checked')) {
-      localStorage.setItem("userPalette", $('#paletteOne').val());
-    } else if ($('#paletteChoiceTwo').is(':checked')){
-      localStorage.setItem("userPalette", $('#paletteTwo').val());
-    } else if ($('#paletteChoiceThree').is(':checked')) {
-      localStorage.setItem("userPalette", $('#paletteThree').val());
-    }
-});
+//=============== Storing User palette ========//
 
 $('#paletteSubmit').on('click', function(){
-  window.location='../html/wireframe.html';
+  var selected = $('input:radio[name=paletteRadio]:checked').val();
+  localStorage.userPalette = JSON.stringify(palettes[selected - 1].colors);
+   window.location='../html/wireframe.html';
+});
+
+// $('#testStorage').on('click', function () {
+//   console.log(JSON.parse(localStorage.userPalette));
+// });
+
+//================ Wireframe ==============//
+
+$('#wireframeSubmit').on('click',function(){
+  if ($('#checkboxOne')[0].checked === true) {
+    localStorage.setItem("userWireframe", $('#srcOne')[0].src);
+
+  } else if ($('#checkboxTwo')[0].checked === true){
+    localStorage.setItem("userWireframe", $('#srcTwo')[0].src);
+
+  } else if ($('#checkboxThree')[0].checked === true){
+    localStorage.setItem("userWireframe", $('#srcThree')[0].src);
+
+  } else if ($('#checkboxFour')[0].checked === true){
+    localStorage.setItem("userWireframe", $('#srcFour')[0].src );
+
+  } else if ($('#checkboxFive')[0].checked === true){
+    localStorage.setItem("userWireframe", $('#srcFive')[0].src);
+
+  } else if ($('#checkboxSix')[0].checked === true){
+    localStorage.setItem("userWireframe", $('#srcSix')[0].src);
+
+  } else if ($('#checkboxSeven')[0].checked === true) {
+    localStorage.setItem("userWireframe", $('#srcSeven')[0].src);
+
+  } else if ($('#checkboxEight')[0].checked === true){
+    localStorage.setItem("userWireframe", $('#srcEight')[0].src);
+  }
+
+
+
+  window.location='../html/styleSheet.html';
 });
 
 
-//======================== Clearing Local Storage ===========================//
+//================ Clearing Local Storage ==============//
 
 function clearStorage(){
   localStorage.clear();
@@ -213,6 +245,11 @@ $("#clear").on('click', clearStorage);
 
 
 
+
+
+
+
+//====================End of Doc Ready=========//
 });
 
 
