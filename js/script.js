@@ -2,6 +2,52 @@
 
 var palettes = [];
 
+$(window).load(function() {
+  var localStorageWordOne = localStorage.userWord;
+  //console.log(localStorageWordOne);
+
+  switch (localStorageWordOne) {
+    case ('retro'):
+      $('#a1').text('Krona One');
+      $($($('.select-wrapper ul').children()[1]).children()[0]).css({'font-family': '\'Krona One\''});
+      $('#a2').html('Ultra');
+      //$('#a2').css('font-family', 'Krona One' 'sans-serif')
+      $('#a3').html('Shrikhand');
+      //$('#a3').css('font-family', 'Krona One' 'sans-serif')
+      $('select').material_select();
+      break;
+    case ('simple'):
+      $('#a1').html('Gruppo');
+      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
+      $('#a2').html('Megrim');
+      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
+      $('#a3').html('Carrois');
+      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
+      $('select').material_select();
+      break;
+    case ('space aged'):
+      $('#a1').html('Bungee Hairline');
+      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
+      $('#a2').html('Bungee Shade');
+      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
+      $('#a3').html('Space Mono');
+      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
+      $('select').material_select();
+      break;
+    case ('dramatic'):
+      $('#a1').html('Montserrat Subrayada');
+      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
+      $('#a2').html('Six Caps');
+      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
+      $('#a3').html('Rubik Mono One');
+      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
+      $('select').material_select();
+      break;
+    default:
+      break;
+  }
+});
+
 $(document).ready(function() {
     //console.log("ready!");
     $(".dropdown-button").dropdown();
@@ -49,15 +95,14 @@ var localStorageWordOne = localStorage.userWord;
 
 switch (localStorageWordOne) {
   case ('retro'):
-  $('#a1').html('Krona One');
-  //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-  $('#a2').html('Ultra');
-  //$('#a2').css('font-family', 'Krona One' 'sans-serif')
-  $('#a3').html('Shrikhand');
-  //$('#a3').css('font-family', 'Krona One' 'sans-serif')
-  $('select').material_select();
+    $('#a1').html('Krona One');
+    $('#a2').html('Ultra');
+    //$('#a2').css('font-family', 'Krona One' 'sans-serif')
+    $('#a3').html('Shrikhand');
+    //$('#a3').css('font-family', 'Krona One' 'sans-serif')
+    $('select').material_select();
     break;
-    case ('simple'):
+  case ('simple'):
     $('#a1').html('Gruppo');
     //$('#a1').css('font-family', 'Krona One' 'sans-serif')
     $('#a2').html('Megrim');
@@ -66,7 +111,7 @@ switch (localStorageWordOne) {
     //$('#a1').css('font-family', 'Krona One' 'sans-serif')
     $('select').material_select();
     break;
-    case ('space aged'):
+  case ('space aged'):
     $('#a1').html('Bungee Hairline');
     //$('#a1').css('font-family', 'Krona One' 'sans-serif')
     $('#a2').html('Bungee Shade');
@@ -75,7 +120,7 @@ switch (localStorageWordOne) {
     //$('#a1').css('font-family', 'Krona One' 'sans-serif')
     $('select').material_select();
     break;
-    case ('dramatic'):
+  case ('dramatic'):
     $('#a1').html('Montserrat Subrayada');
     //$('#a1').css('font-family', 'Krona One' 'sans-serif')
     $('#a2').html('Six Caps');
@@ -85,7 +130,7 @@ switch (localStorageWordOne) {
     $('select').material_select();
     break;
   default:
-
+    break;
 }
 
 $('#typeSubmit').on('click', function() {
