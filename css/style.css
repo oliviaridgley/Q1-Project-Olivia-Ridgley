@@ -12,11 +12,21 @@
   font-size: 55px;
 }
 
-
-
-.palette{
-  border: 2px solid black;
+#paletteContainer{
+  height: 90%;
 }
+
+#paletteOne, #paletteTwo, #paletteThree {
+  height: 600px;
+  
+  margin:5px;
+}
+
+.colorBlock{
+  width: 100%;
+  height: 120px;
+}
+
 .flexBox{
   display: flex;
   justify-content: center;

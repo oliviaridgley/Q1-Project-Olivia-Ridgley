@@ -1,6 +1,6 @@
 "use strict";
 $(document).ready(function() {
-    console.log("ready!");
+    //console.log("ready!");
     $(".dropdown-button").dropdown();
     $(".button-collapse").sideNav();
     $('#textarea1').val('New Text');
@@ -9,6 +9,7 @@ $(document).ready(function() {
 
 
 
+//=================== Checking Word Submitted and Storing =============//
 
     $('#wordsSubmit').on('click', function() {
         if ($('#simple').is(':checked')) {
@@ -39,9 +40,10 @@ $(document).ready(function() {
   });
 
 
+//============ Placing Typeface Choices from Word Selection  +  Store ======//
 
 var localStorageWordOne = localStorage.userWord;
-console.log(localStorageWordOne);
+//console.log(localStorageWordOne);
 
 switch (localStorageWordOne) {
   case ('retro'):
@@ -95,7 +97,7 @@ $('#typeSubmit').on('click', function() {
 });
 
 var localStorageWordTwo = localStorage.userWord2;
-console.log(localStorageWordTwo);
+//console.log(localStorageWordTwo);
 
 switch (localStorageWordTwo) {
   case ('modern'):
@@ -152,7 +154,7 @@ $('#typeSubmit').on('click', function(){
   window.location='../html/palette.html';
 });
 
-
+//=========================== Api Call to ColourLovers ================//
 
 function pickColorButton(){
   var tempHex = ($('#colorPicker').val());
@@ -162,14 +164,21 @@ console.log(userHex);
   var url = "https://g-colourlovers.herokuapp.com/api/palettes?format=json&hex="+ userHex + "&numResults=3";
 
 $.getJSON(url).done(function(data) {
+  console.log(data);
           var colorData = data;
 
+
           for (var prop in colorData) {
-          console.log(data[prop].colors);
-$('#paletteOne').append("<div id=colorAOne></div>");
-$('#colorAOne').css('background-color','black');
+            console.log(data[prop].colors);
+            for (var j in colorData[prop].colors){
+              // $('#paletteOne').append("<div id=colorAOne></div>");
+              $('#p' + (+prop + 1) + '-' + (+j + 1)).css('background-color','#' + colorData[prop].colors[j]);
+              console.log('#p' + (+prop + 1) + '-' + (+j + 1) + "set to " + colorData[prop].colors[j]);
+            }
+
 
           }
+
           //console.log(data[0].colors);
       });
 
@@ -178,6 +187,23 @@ $('#colorAOne').css('background-color','black');
 
 $("#colorButton").on('click',pickColorButton);
 
+//=================Color palette Storage + Next Page ============//
+$('#paletteSubmit').on('click', function() {
+    if ($('#paletteChoiceOne').is('checked')) {
+      localStorage.setItem("userPalette", $('#paletteOne').val());
+    } else if ($('#paletteChoiceTwo').is(':checked')){
+      localStorage.setItem("userPalette", $('#paletteTwo').val());
+    } else if ($('#paletteChoiceThree').is(':checked')) {
+      localStorage.setItem("userPalette", $('#paletteThree').val());
+    }
+});
+
+$('#paletteSubmit').on('click', function(){
+  window.location='../html/wireframe.html';
+});
+
+
+//======================== Clearing Local Storage ===========================//
 
 function clearStorage(){
   localStorage.clear();

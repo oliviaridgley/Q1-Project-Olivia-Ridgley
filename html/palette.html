@@ -4,18 +4,18 @@
 <head>
     <meta charset="utf-8">
     <title>Q1_Olivia_Ridgley</title>
-<!--Import Google Icon Font-->
+    <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Quicksand|Roboto|Julius+Sans+One" rel="stylesheet">
-<!-- Compiled and minified CSS -->
+    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-<!-- css link -->
+    <!-- css link -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/spectrum.css" />
 </head>
 
 <body>
-<!-- Nav Bar -->
+    <!-- Nav Bar -->
     <ul id="dropdown1" class="dropdown-content">
         <li><a href="about.html">About</a></li>
         <li><a href="words.html">Mood</a></li>
@@ -43,32 +43,118 @@
         </div>
     </nav>
     <div class="container">
-<!-- Palette Containers -->
 
-<div id = "paletteOne" class="palette">
-</div>
-<div id = "paletteTwo" class="palette">
-</div>
-<div id = "paletteThree" class="palette">
-</div>
-<div class="col l2 m2 s2" id="pickerBox">
+        <div class="row">
+<p>Select a color below to create options for your site color theme :</p>
+          <!-- Color Picker -->
 
-<input type="color" name="color" id="colorPicker"/>
+          <div class="col s12 m3 l2" id="pickerBox">
 
-</div>
 
-<a id ="colorButton" class="waves-effect waves-light btn-large">Button</a>
 
-<!--End of Container-->
+            <input type="color" name="color" id="colorPicker" />
+
+            <a id="colorButton" class="waves-effect waves-light btn-flat">Submit</a>
+
+          </div>
+        </div>
+<div class="row">
+          <!-- Palette Containers -->
+          <div id = "paletteContainer" class="col s12 m9 l10 right">
+            <p>Click on the palette you like the best :</p>
+
+            <div id="paletteOne" class="col s12 m6 l3">
+                <div id="p1-1" class="colorBlock">
+
+                </div>
+                <div id="p1-2" class="colorBlock">
+
+                </div>
+                <div id="p1-3" class="colorBlock">
+
+                </div>
+                <div id="p1-4" class="colorBlock">
+
+                </div>
+                <div id="p1-5" class="colorBlock">
+
+                </div>
+            </div>
+
+            <div id="paletteTwo" class="col s12 m6 l3">
+                <div id="p2-1" class="colorBlock">
+
+                </div>
+                <div id="p2-2" class="colorBlock">
+
+                </div>
+                <div id="p2-3" class="colorBlock">
+
+                </div>
+                <div id="p2-4" class="colorBlock">
+
+                </div>
+                <div id="p2-5" class="colorBlock">
+
+                </div>
+            </div>
+            <div id="paletteThree" class="col s12 m6 l3">
+                <div id="p3-1" class="colorBlock">
+
+                </div>
+                <div id="p3-2" class="colorBlock">
+
+                </div>
+                <div id="p3-3" class="colorBlock">
+
+                </div>
+                <div id="p3-4" class="colorBlock">
+
+                </div>
+                <div id="p3-5" class="colorBlock">
+
+                </div>
+            </div>
+
+          </div>
+
+            <!-- end of row -->
+        </div>
+        <div class="row">
+          <div class="col s12 m12 l12 flexBox">
+            <p>
+               <input name="paletteRadio" type="radio" id="paletteChoiceOne" />
+               <label for="paletteChoiceOne">One</label>
+           </p>
+           <p>
+              <input name="paletteRadio" type="radio" id="paletteChoiceTwo" />
+              <label for="paletteChoiceTwo">Two</label>
+          </p>
+          <p>
+             <input name="paletteRadio" type="radio" id="paletteChoiceThree" />
+             <label for="paletteChoiceThree">Three</label>
+         </p>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col s12 m12 l12 flexBox">
+            <a id = "paletteSubmit" class="waves-effect waves-light btn">button</a>
+          </div>
+        </div>
+
+
+
+        <!--End of Container-->
     </div>
 
-<!-- Footer -->
+    <!-- Footer -->
     <footer class="page-footer">
         <div class="container">
             <div class="row">
                 <div class="col s3">
                 </div>
-<!-- Pagination -->
+                <!-- Pagination -->
                 <div class="col s6">
                     <ul class="pagination center-align">
 
@@ -85,7 +171,7 @@
                         <li class="waves-effect"><a href="styleSheet.html"><i class="material-icons" id = "pageSix">fiber_manual_record</i></a></li>
                     </ul>
                 </div>
-<!-- Lower Footer + Copyright -->
+                <!-- Lower Footer + Copyright -->
                 <div class="col s3">
                 </div>
             </div>
@@ -96,12 +182,12 @@
         </div>
     </footer>
 
-<!--Import jQuery-->
+    <!--Import jQuery-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-<!-- Compiled and minified JavaScript -->
+    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-<!-- javascript link -->
+    <!-- javascript link -->
     <script type="text/javascript" src="../js/script.js"></script>
     <script src="../js/spectrum.js"></script>
 
