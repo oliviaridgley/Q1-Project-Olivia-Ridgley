@@ -8,14 +8,6 @@ $(document).ready(function() {
     $('select').material_select();
 
 
-    //loadPalettes();
-
-    // var url = "https://g-colourlovers.herokuapp.com/api/palettes?format=json&hex=990000&numResults=3";
-    //
-    // $.getJSON(url,function(response) {
-    //   console.log('response: ' + response);
-    // });
-
 
 
     $('#wordsSubmit').on('click', function() {
@@ -162,7 +154,7 @@ $('#typeSubmit').on('click', function(){
 
 
 
-function pickColorButt(){
+function pickColorButton(){
   var tempHex = ($('#colorPicker').val());
 var userHex = tempHex.substring(1);
 console.log(userHex);
@@ -184,7 +176,7 @@ $('#colorAOne').css('background-color','black');
 
 }
 
-$("#colorButton").on('click',pickColorButt);
+$("#colorButton").on('click',pickColorButton);
 
 
 function clearStorage(){
