@@ -262,6 +262,19 @@ $('#typefaceBoxOne').append().html("<p style='"+ typeface1 + "'>"+localStorage.u
 
 $('#typefaceBoxTwo').append().html("<p style='"+ typeface2 + "'>"+localStorage.userType2+ "<br>A B C D E F G H I J K L M N O <br> p q r s t u v w x y z</p>");
 
+ var arr = JSON.parse( localStorage.getItem('userPalette') );
+ console.log(arr);
+
+function appendColors (arr) {
+   for (let i = 0; i < arr.length; i++){
+     $("#colorAppend" + [i]).css("background-color",'#' + arr[i]);
+   }
+ }
+ 
+ appendColors(arr);
+
+
+
 
 
 
