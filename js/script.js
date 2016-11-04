@@ -12,6 +12,7 @@ $(document).ready(function() {
     $('select').material_select();
 
 
+
     var localStorageWordOne = localStorage.userWord;
     console.log(localStorageWordOne);
 
@@ -158,6 +159,7 @@ $('#b3').is('click', function(){
     });
 
 $('#typeSubmit').on('click', function(){
+  localStorage.setItem("userName", $('#projectName').val());
   window.location='../html/palette.html';
 });
 
@@ -239,11 +241,19 @@ $('#wireframeSubmit').on('click',function(){
   window.location='../html/styleSheet.html';
 });
 
+//============== Appending form localStorage=============//
+
+$('#nameBox').append().html("<h2 class='flexBox'>" + localStorage.userName + "</h2>")
+
+$('#moodBoxOne').append().html("")
+
+
 
 //================ Clearing Local Storage ==============//
 
 function clearStorage(){
   localStorage.clear();
+  window.location='../index.html';
 }
 
 $("#clear").on('click', clearStorage);

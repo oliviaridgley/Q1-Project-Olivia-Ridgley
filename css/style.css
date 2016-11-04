@@ -7,6 +7,11 @@
     color: black;
     border: 1px solid black;
     padding: 14px 40px;
+    margin: 10px;
+}
+
+#colorPicker{
+  margin: 25px;
 }
 
 #pageOne, #pageTwo, #pageThree, #pageFour, #pageFive, #pageSix{
@@ -27,6 +32,44 @@
   height: 600px;
 
   margin:5px;
+}
+
+#nameBox{
+  border: 1px solid black;
+  height: 200px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+#moodBoxOne{
+  border: 1px solid black;
+  height: 200px;
+  width: 100%;
+}
+
+#moodBoxTwo{
+  border: 1px solid black;
+  height: 200px;
+  width: 100%;
+}
+
+#wireframeBox{
+  border: 1px solid black;
+  height: 270px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+#typefaceBox{
+  border: 1px solid black;
+  height: 300px;
+  width: 100%;
+}
+
+#paletteBox{
+  border: 1px solid black;
+  height: 600px;
+  width: 100%;
 }
 
 .colorBlock{
