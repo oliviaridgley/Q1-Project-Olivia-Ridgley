@@ -258,6 +258,10 @@ $('#moodBoxTwo').append().html("<h2 class='flexBox' style='"+ typeface2 + "'>" +
 $('#wireframeBox').css("background-image", "url("+localStorage.userWireframe+")");
 $('#wireframeBox').css("background-size", "cover");
 
+$('#typefaceBoxOne').append().html("<p style='"+ typeface1 + "'>"+localStorage.userType+ "<br>A B C D E F G H I J K L M N O <br> p q r s t u v w x y z</p>");
+
+$('#typefaceBoxTwo').append().html("<p style='"+ typeface2 + "'>"+localStorage.userType2+ "<br>A B C D E F G H I J K L M N O <br> p q r s t u v w x y z</p>");
+
 
 
 
