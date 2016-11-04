@@ -2,6 +2,13 @@
   background-color: #fafafa;
 }
 
+#a1, #a2, #a3, #b1, #b2, #b3{
+  background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 14px 40px;
+}
+
 #pageOne, #pageTwo, #pageThree, #pageFour, #pageFive, #pageSix{
   font-size: 1rem;
 }
