@@ -241,11 +241,23 @@ $('#wireframeSubmit').on('click',function(){
   window.location='../html/styleSheet.html';
 });
 
-//============== Appending form localStorage=============//
+//============== Appending from localStorage=============//
 
 $('#nameBox').append().html("<h2 class='flexBox'>" + localStorage.userName + "</h2>")
 
-$('#moodBoxOne').append().html("")
+var typeface1 = 'font-family:'+ localStorage.userType;
+console.log(typeface1);
+
+$('#moodBoxOne').append().html("<h2 class='flexBox' style='"+ typeface1 + "'>" + localStorage.userWord + "</h2>");
+
+var typeface2 = 'font-family:'+ localStorage.userType2;
+console.log(typeface2);
+
+$('#moodBoxTwo').append().html("<h2 class='flexBox' style='"+ typeface2 + "'>" + localStorage.userWord2 + "</h2>");
+
+$('#wireframeBox').css("background-image", "url("+localStorage.userWireframe+")");
+$('#wireframeBox').css("background-size", "cover");
+
 
 
 

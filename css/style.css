@@ -53,11 +53,16 @@
   width: 100%;
 }
 
-#wireframeBox{
+#wireframeOuter{
   border: 1px solid black;
   height: 270px;
   width: 100%;
   margin-bottom: 30px;
+}
+
+#wireframeBox{
+  width:163px;
+  height:163px
 }
 
 #typefaceBox{
