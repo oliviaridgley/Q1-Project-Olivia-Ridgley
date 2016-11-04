@@ -2,59 +2,21 @@
 
 var palettes = [];
 
-$(window).load(function() {
-  var localStorageWordOne = localStorage.userWord;
-  //console.log(localStorageWordOne);
-
-  switch (localStorageWordOne) {
-    case ('retro'):
-      $('#a1').text('Krona One');
-      $($($('.select-wrapper ul').children()[1]).children()[0]).css({'font-family': '\'Krona One\''});
-      $('#a2').html('Ultra');
-      //$('#a2').css('font-family', 'Krona One' 'sans-serif')
-      $('#a3').html('Shrikhand');
-      //$('#a3').css('font-family', 'Krona One' 'sans-serif')
-      $('select').material_select();
-      break;
-    case ('simple'):
-      $('#a1').html('Gruppo');
-      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-      $('#a2').html('Megrim');
-      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-      $('#a3').html('Carrois');
-      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-      $('select').material_select();
-      break;
-    case ('space aged'):
-      $('#a1').html('Bungee Hairline');
-      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-      $('#a2').html('Bungee Shade');
-      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-      $('#a3').html('Space Mono');
-      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-      $('select').material_select();
-      break;
-    case ('dramatic'):
-      $('#a1').html('Montserrat Subrayada');
-      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-      $('#a2').html('Six Caps');
-      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-      $('#a3').html('Rubik Mono One');
-      //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-      $('select').material_select();
-      break;
-    default:
-      break;
-  }
-});
 
 $(document).ready(function() {
-    //console.log("ready!");
+    console.log("ready!");
     $(".dropdown-button").dropdown();
     $(".button-collapse").sideNav();
     $('#textarea1').val('New Text');
     $('#textarea1').trigger('autoresize');
     $('select').material_select();
+
+
+    var localStorageWordOne = localStorage.userWord;
+    console.log(localStorageWordOne);
+
+    var localStorageWordTwo = localStorage.userWord2;
+    console.log(localStorageWordTwo);
 
 
 //=========== Checking Word Submitted and Storing ===========//
@@ -70,6 +32,7 @@ $(document).ready(function() {
           localStorage.setItem("userWord", $('#spaceAged').val());
         }
     });
+console.log(localStorage.userWord);
 
     $('#wordsSubmit').on('click', function() {
         if ($('#modern').is(':checked')) {
@@ -82,6 +45,7 @@ $(document).ready(function() {
           localStorage.setItem("userWord2", $('#crafty').val());
         }
     });
+console.log(localStorage.userWord2);
 
   $('#wordsSubmit').on('click', function(){
     window.location='../html/typeface.html';
@@ -90,112 +54,108 @@ $(document).ready(function() {
 
 //======= Placing Typeface Choices from Word Selection  +  Store ======//
 
-var localStorageWordOne = localStorage.userWord;
-//console.log(localStorageWordOne);
+
 
 switch (localStorageWordOne) {
   case ('retro'):
-    $('#a1').html('Krona One');
-    $('#a2').html('Ultra');
-    //$('#a2').css('font-family', 'Krona One' 'sans-serif')
-    $('#a3').html('Shrikhand');
-    //$('#a3').css('font-family', 'Krona One' 'sans-serif')
-    $('select').material_select();
+    $('#a1').val('Krona One');
+    $('#a1').css('font-family', 'Krona One');
+    $('#a2').val('Ultra');
+    $('#a2').css('font-family', 'Ultra');
+    $('#a3').val('Shrikhand');
+    $('#a3').css('font-family', 'Shrikhand');
     break;
   case ('simple'):
-    $('#a1').html('Gruppo');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#a2').html('Megrim');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#a3').html('Carrois');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('select').material_select();
+    $('#a1').val('Gruppo');
+    $('#a1').css('font-family', 'Gruppo');
+    $('#a2').val('Megrim');
+    $('#a2').css('font-family', 'Megrim');
+    $('#a3').val('Carrois');
+    $('#a3').css('font-family', 'Carrois');
     break;
   case ('space aged'):
-    $('#a1').html('Bungee Hairline');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#a2').html('Bungee Shade');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#a3').html('Space Mono');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('select').material_select();
+    $('#a1').val('Bungee Hairline');
+    $('#a1').css('font-family', 'Bungee Hairline');
+    $('#a2').val('Bungee Shade');
+    $('#a2').css('font-family', 'Bungee Shade');
+    $('#a3').val('Space Mono');
+    $('#a3').css('font-family', 'Space Mono');
     break;
   case ('dramatic'):
-    $('#a1').html('Montserrat Subrayada');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#a2').html('Six Caps');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#a3').html('Rubik Mono One');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('select').material_select();
+    $('#a1').val('Montserrat Subrayada');
+    $('#a1').css('font-family', 'Montserrat Subrayada');
+    $('#a2').val('Six Caps');
+    $('#a2').css('font-family', 'Six Caps');
+    $('#a3').val('Rubik Mono One');
+    $('#a3').css('font-family', 'Rubik Mono One');
     break;
   default:
     break;
 }
 
-$('#typeSubmit').on('click', function() {
-    if ($('#a1').is(':selected')) {
-      localStorage.setItem("userType", $('#a1').text());
-    } else if ($('#a2').is(':selected')){
-      localStorage.setItem("userType", $('#a2').text());
-    } else if ($('#a3').is(':selected')) {
-      localStorage.setItem("userType", $('#a3').text());
-    }
-});
+$('#a1').on('click', function(){
+      localStorage.setItem("userType", $('#a1').val());
+    });
 
-var localStorageWordTwo = localStorage.userWord2;
-//console.log(localStorageWordTwo);
+$('#a2').on('click', function(){
+      localStorage.setItem("userType", $('#a2').val());
+    });
+
+$('#a3').on('click', function(){
+      localStorage.setItem("userType", $('#a3').val());
+    });
+
+
 
 switch (localStorageWordTwo) {
   case ('modern'):
-  $('#b1').html('Poiret One');
-  //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-  $('#b2').html('Comfortaa');
-  //$('#a2').css('font-family', 'Krona One' 'sans-serif')
-  $('#b3').html('Cinzel');
-  //$('#a3').css('font-family', 'Krona One' 'sans-serif')
-  $('select').material_select();
+    $('#b1').val('Poiret One');
+    $('#b1').css('font-family', 'Poiret One');
+    $('#b2').val('Comfortaa');
+    $('#b2').css('font-family', 'Comfortaa');
+    $('#b3').val('Cinzel');
+    $('#b3').css('font-family', 'Cinzel');
     break;
-    case ('classic'):
-    $('#b1').html('Petit Formal Script');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#b2').html('Trirong');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#b3').html('Josefin Slab');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('select').material_select();
+  case ('classic'):
+    $('#b1').val('Petit Formal Script');
+    $('#b1').css('font-family', 'Petit Formal Script');
+    $('#b2').val('Trirong');
+    $('#b2').css('font-family', 'Trirong');
+    $('#b3').val('Josefin Slab');
+    $('#b3').css('font-family', 'Josefin Slab');
     break;
-    case ('whimsical'):
-    $('#b1').html('Codystar');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#b2').html('Cormorant SC');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#b3').html('Petit Formal Script');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('select').material_select();
+  case ('whimsical'):
+    $('#b1').val('Codystar');
+    $('#b1').css('font-family', 'Codystar');
+    $('#b2').val('Cormorant SC');
+    $('#b2').css('font-family', 'Cormorant SC');
+    $('#b3').val('Petit Formal Script');
+    $('#b3').css('font-family', 'Petit Formal Script');
     break;
-    case ('crafty'):
-    $('#b1').html('Pacifico');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#b2').html('Amatic SC');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('#b3').html('Chathura');
-    //$('#a1').css('font-family', 'Krona One' 'sans-serif')
-    $('select').material_select();
+  case ('crafty'):
+    $('#b1').val('Pacifico');
+    $('#b1').css('font-family', 'Pacifico');
+    $('#b2').val('Amatic SC');
+    $('#b2').css('font-family', 'Amatic SC');
+    $('#b3').val('Chathura');
+    $('#b3').css('font-family', 'Chathura');
     break;
   default:
+    break;
 
 }
 
-$('#typeSubmit').on('click', function() {
-    if ($('#b1').is(':selected')) {
-      localStorage.setItem("userType2", $('#b1').text());
-    } else if ($('#b2').is(':selected')){
-      localStorage.setItem("userType2", $('#b2').text());
-    } else if ($('#b3').is(':selected')) {
-      localStorage.setItem("userType2", $('#b3').text());
-    }
-});
+$('#b1').on('click', function(){
+      localStorage.setItem("userType2", $('#b1').val());
+    });
+
+$('#b2').on('click', function(){
+      localStorage.setItem("userType2", $('#b2').val());
+    });
+
+$('#b3').is('click', function(){
+      localStorage.setItem("userType2", $('#b3').val());
+    });
 
 $('#typeSubmit').on('click', function(){
   window.location='../html/palette.html';
